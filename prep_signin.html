@@ -1,16 +1,78 @@
 <html>
 <head>
-	<title>Image Hit Game|Sign i</title>
+	<title>Image Hit|Sign in</title>
 	<script type = "text/javascript" src = "prep_pro.js"> </script>
 	<script src='https://code.jquery.com/jquery-2.2.4.js'></script>
 </head>
 <body>
+<h1><b> Sign In<b><h1>
+<!-- <form action="game.html" method="POST"> -->
+<div>
+	<div class = "inputs">
+	Username:<br>
+	<input type = "text" id = "username"></input>
+	</div>
+	<br>
+	<div class = "inputs">
+	Password:<br>
+	<input type = "text" id = "password" value=""></input>
+</div><br>
+<button id = "singin">Sign In</button><br><br><br>
+<!-- </form> --> 
 
-	<script>
+<!-- <form action="prep_pro2.html" method="POST"> -->
+<div class = "i">
+If you don't have account.<br>
+<button id = "singup">Sign Up</button>
+</div>
+<!-- </form> -->
+
+<script>
+function each(coll,fu){
+    if(Array.isArray(coll)){
+        for (var i = 0; i < coll.length; i++) {
+            fu(coll[i],i);
+        }
+    }else{
+        for(var key in coll){
+            fu(coll[key],key);
+        }
+    }
+}
+
+$('h1').css('font-size', '50px')
+$('.inputs').css('font-size', '25px')
+$('.i').css('font-size', '18px')
+var signup=document.getElementsByTagName('button')[1];
+signup.addEventListener('click',signups,false);
+var signin=document.getElementsByTagName('button')[0];
+signin.addEventListener('click',signins,false);
+
+function signups(){
+	window.location.href = "prep_pro2.html";
+}
+function signins(){
+	var username1= document.getElementsByTagName("input")[0].value
+    var password1= document.getElementsByTagName("input")[1].value
+	var storedNames = JSON.parse(localStorage.getItem("userarray"));
+    var storedNames2 = JSON.parse(localStorage.getItem("newAdd"));
+	each(storedNames,function(ele){
+		if(ele.name===username1 && ele.password===password1){
+			alert("correct password")
+			localStorage.setItem("userarray", JSON.stringify(userarray));
+			window.location.href = "game.html";
+		}
+		else alert("Try again");
+
+	});
+}
+
+
 /*var x = localStorage.x;
 console.log(x)*/
-var storedNames = JSON.parse(localStorage.getItem("userarray"));
-console.log(storedNames[0])
+
+console.log(storedNames2)
+
 </script>
 
 </body>
