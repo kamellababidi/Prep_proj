@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Image Hit Game|Sign Up</title>
+	<title>Image Hit|Sign Up</title>
 	<script type = "text/javascript" src = "prep_pro.js"> </script>
 	<script src='https://code.jquery.com/jquery-2.2.4.js'></script>
 
@@ -8,7 +8,7 @@
 
 <body>
 <h1><b> Sign Up<b><h1>
-<form action="prep_signin.html" method="POST"
+<form action="prep_signin.html" method="POST">
 	<div>
 	<div class = "inputs">
 	Name:<br>
@@ -34,8 +34,8 @@ $('.inputs').css('font-size', '25px')
 var signup=document.getElementsByTagName('button')[0];
 //global signup array
 var userarray=[];
-signup.addEventListener('click',signupe,false);
-function signupe(){
+signup.addEventListener('click',make,false);
+function make(){
 	var name1= document.getElementsByTagName("input")[0].value;
 	var email1=document.getElementsByTagName("input")[1].value;
 	var password1=document.getElementsByTagName("input")[2].value;
