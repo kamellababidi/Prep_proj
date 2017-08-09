@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Image Hit</title>
+	<script type = "text/javascript" src = "prep_pro.js"> </script>
+	<script src='https://code.jquery.com/jquery-2.2.4.js'></script>
+</head>
+<body>
+	catch the right color <br>
+	
+	<div>  
+	<p id = "name">Name: </p>
+	<p id = "bestscore">Best Score: </p>
+	<p id = "trials">Trials: </p>
+	</div>
+
+	<img id="image" src="http://www.soarselling.com/wp-content/uploads/2012/10/areyoureadybrain-460x355.jpg" alt="welcome"><br>
+	<button id = "start">Start</button>
+
+<script>
+function each(coll,fu){
+    if(Array.isArray(coll)){
+        for (var i = 0; i < coll.length; i++) {
+            fu(coll[i],i);
+        }
+    }else{
+        for(var key in coll){
+            fu(coll[key],key);
+        }
+    }
+}
+
+
+
+var array = JSON.parse(localStorage.getItem("userarray"));
+$('#name').append(array[0].name);
+
+var btn=document.getElementsByTagName('button')[0];
+btn=addEventListener('click',start,false);
+function start(){
+	var image=document.getElementsByTagName('img')[0];
+var red="http://www.colorcombos.com/images/colors/FF0000.png"
+var green="http://www.smartcc365.com/data/out/235/1579524.gif"
+var blue="http://www.laminex.com.au/uploads/products/olympia_blue.jpg"
+var arrOFimg=[red,green,blue];
+each(arrOFimg,function(ele){
+	 var x=setTimeout(function(){
+	 	image.src=ele;
+	 },2000)
+	 
+})
+ clearTimeout(x);
+
+} 
+</script>
+</body>
+</html>

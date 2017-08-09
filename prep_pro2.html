@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title>Image Hit|Sign Up</title>
+	<script type = "text/javascript" src = "prep_pro.js"> </script>
+	<script src='https://code.jquery.com/jquery-2.2.4.js'></script>
+
+</head>
+
+<body>
+<h1><b> Sign Up<b><h1>
+<form action="prep_signin.html" method="POST"
+	<div>
+	<div class = "inputs">
+	Name:<br>
+	<input type = "text" id = "name"></input>
+	</div>
+	<br>
+	<div class = "inputs">
+	Email:<br>
+	<input type = "text" id = "email" value=""></input>
+	</div>
+	<br>
+	<div class = "inputs">
+	Password:<br>
+	<input type = "text" id = "password"></input>
+	</div><br>
+	<button id = "singup">Sign Up</button>
+
+</div>
+</form> 
+<script>
+$('h1').css('font-size', '50px')
+$('.inputs').css('font-size', '25px')
+var signup=document.getElementsByTagName('button')[0];
+//global signup array
+signup.addEventListener('click',make,false);
+//var storedNames = JSON.parse(localStorage.getItem("userarray"));
+function make(){
+	var name1= document.getElementsByTagName("input")[0].value;
+	var email1=document.getElementsByTagName("input")[1].value;
+	var password1=document.getElementsByTagName("input")[2].value;
+	var obj={};
+
+   obj['name']=name1;
+   obj['email']=email1;
+   obj['password']=password1;
+   var newAdd = JSON.parse(localStorage.getItem("userarray"))
+   newAdd.push(obj)
+   console.log(newAdd)
+   localStorage.setItem("newAdd", JSON.stringify(newAdd));
+   //localStorage.setItem("x",name1)
+  /* localStorage.setItem("userarray", JSON.stringify(userarray));*/	
+
+}
+  
+</script>	
+</body>
+</html>
+
